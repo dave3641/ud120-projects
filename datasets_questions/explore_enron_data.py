@@ -19,4 +19,12 @@ import pickle
 
 enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "rb"))
 
+print "\nNumber of people in the Enron dataset: ", len(enron_data)
 
+print "\nNumber of features for each person: ", len(enron_data.items()[0])
+
+pois = [names for names, feature in enron_data.items() if feature['poi']]
+print "\nNumber of POI's: ", len(pois)
+#print sum(1 for p in enron_data if p.items('poi') == 'True')
+#sum(p.poi == 'True' for p in enron_data)#
+#print enron_data
